@@ -15,12 +15,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'WK Design — We craft websites that leave a mark.',
+  title: 'WK Design — Freelance Web Design & Development',
   description:
-    'WK Design builds premium, high-performance websites for clients. View our portfolio of work.',
+    'Freelance web designer and developer crafting premium, user-centered websites. Custom design, clean code, no templates.',
   openGraph: {
     title: 'WK Design',
-    description: 'We craft websites that leave a mark.',
+    description: 'Freelance web design & development — I craft websites that leave a mark.',
     type: 'website',
   },
 }
@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
-      <body className="bg-forest-deep text-cream antialiased">{children}</body>
+      <body className="bg-base text-text antialiased">{children}</body>
     </html>
   )
 }
