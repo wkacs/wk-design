@@ -1,26 +1,143 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Colors */
+  --color-forest-deep: #1a1008;
+  --color-forest-mid: #2a1a0a;
+  --color-forest-card: #1e1205;
+
+  --color-autumn-orange: #e8650a;
+  --color-autumn-amber: #f5a623;
+  --color-autumn-crimson: #8b2500;
+  --color-autumn-border: #c47a15;
+
+  --color-cream: #f5eed6;
+  --color-cream-muted: #a08060;
+
+  /* Font families */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  /* Animations */
+  --animate-leaf-fall: leafFall var(--duration, 8s) var(--delay, 0s) linear infinite;
+  --animate-firefly-float: fireflyFloat var(--duration, 6s) var(--delay, 0s) ease-in-out infinite;
+  --animate-horizon-pulse: horizonPulse 5s ease-in-out infinite;
+  --animate-text-shimmer: textShimmer 2.5s ease-in-out forwards;
+  --animate-fade-up: fadeUp 0.8s ease-out forwards;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes leafFall {
+  0% {
+    transform: translateX(0) translateY(-10vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  90% { opacity: 0.7; }
+  100% {
+    transform: translateX(var(--leaf-drift, 100px)) translateY(110vh) rotate(var(--leaf-spin, 360deg));
+    opacity: 0;
   }
 }
 
+@keyframes fireflyFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.15;
+  }
+  25% {
+    transform: translate(var(--ff-x1, 30px), var(--ff-y1, -25px));
+    opacity: 1;
+  }
+  50% {
+    transform: translate(var(--ff-x2, -20px), var(--ff-y2, 30px));
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(var(--ff-x3, 15px), var(--ff-y3, 10px));
+    opacity: 0.9;
+  }
+}
+
+@keyframes horizonPulse {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+
+@keyframes textShimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1008;
+  color: #f5eed6;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* Particle leaf elements injected by JS */
+.leaf-particle {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  font-size: var(--leaf-size, 1.2rem);
+  animation: leafFall var(--duration, 8s) var(--delay, 0s) linear infinite;
+  z-index: 10;
+}
+
+/* Firefly elements injected by JS */
+.firefly-particle {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5a623 0%, #e8650a 60%, transparent 100%);
+  box-shadow: 0 0 8px 3px rgba(245, 166, 35, 0.7);
+  pointer-events: none;
+  animation: fireflyFloat var(--duration, 6s) var(--delay, 0s) ease-in-out infinite;
+  z-index: 8;
+}
+
+/* Shimmer text gradient */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #f5eed6 0%,
+    #f5a623 25%,
+    #e8650a 50%,
+    #f5a623 75%,
+    #f5eed6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 2.5s ease-in-out forwards;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .leaf-particle,
+  .firefly-particle {
+    display: none;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
