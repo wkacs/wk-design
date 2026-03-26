@@ -4,14 +4,14 @@ export const projects: Project[] = [
   {
     id: 'konfuciusz-intezet',
     title: 'ELTE Confucius Institute',
-    description: 'A rich, immersive website for the ELTE Confucius Institute in Budapest. Cultural-themed design with interactive elements, 3D tilt cards, parallax scrolling, and atmospheric particle effects. Built with Next.js, Tailwind CSS, and Framer Motion.',
+    description: '• Goal: Help the institute stand out online and attract more students and event visitors.\n• Approach: A visually striking design that reflects the institute\'s cultural identity and makes it easy to find courses, events, and contact info.\n• Result: A professional online presence that builds trust and drives inquiries.',
     url: 'https://konfuciusz-intezet.vercel.app/',
     imageUrl: '/konfuciusz.png',
   },
   {
     id: 'ember-and-oak',
     title: 'Ember & Oak',
-    description: 'An elegant restaurant website with a warm, wood-fired aesthetic. Full-screen food photography, smooth animations, and a refined layout that captures the dining experience. Built with Next.js, Tailwind CSS, and Framer Motion.',
+    description: '• Goal: Fill more tables by making the restaurant irresistible before guests even walk through the door.\n• Approach: Beautiful food imagery and a warm, inviting feel that captures the dining experience and makes booking effortless.\n• Result: A website that turns hungry browsers into paying guests.',
     url: 'https://ember-oak-zeta.vercel.app/',
     imageUrl: '/emberandoak.png',
   },
