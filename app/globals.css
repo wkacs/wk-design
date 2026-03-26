@@ -83,8 +83,8 @@ html {
 }
 
 body {
-  background-color: #1a1008;
-  color: #f5eed6;
+  background-color: var(--color-forest-deep);
+  color: var(--color-cream);
   font-family: var(--font-inter);
   overflow-x: hidden;
 }
@@ -105,8 +105,8 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: radial-gradient(circle, #f5a623 0%, #e8650a 60%, transparent 100%);
-  box-shadow: 0 0 8px 3px rgba(245, 166, 35, 0.7);
+  background: radial-gradient(circle, var(--color-autumn-amber) 0%, var(--color-autumn-orange) 60%, transparent 100%);
+  box-shadow: 0 0 8px 3px rgba(from var(--color-autumn-amber) r g b / 0.7);
   pointer-events: none;
   animation: fireflyFloat var(--duration, 6s) var(--delay, 0s) ease-in-out infinite;
   z-index: 8;
@@ -116,11 +116,11 @@ body {
 .shimmer-text {
   background: linear-gradient(
     90deg,
-    #f5eed6 0%,
-    #f5a623 25%,
-    #e8650a 50%,
-    #f5a623 75%,
-    #f5eed6 100%
+    var(--color-cream) 0%,
+    var(--color-autumn-amber) 25%,
+    var(--color-autumn-orange) 50%,
+    var(--color-autumn-amber) 75%,
+    var(--color-cream) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
