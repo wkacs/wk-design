@@ -109,9 +109,9 @@ export function About() {
           </div>
 
           <p className="max-w-xl font-sans text-[0.88rem] leading-[1.8] text-text-secondary">
-            I&apos;m a freelance web designer and developer focused on creating clean, user-centered digital experiences.
-            Every project starts with understanding your goals and your users — then building something that
-            serves both beautifully. No templates, no shortcuts. Just thoughtful design backed by solid code.
+            I’m a freelance web designer and developer creating websites that don’t just look good they get results.
+Every project begins by understanding your business, your goals, and your users, then designing and building a site that guides visitors to take action.
+No templates. No shortcuts. Just clean, high-performing websites built to convert.
           </p>
 
           <div className="mt-2 flex flex-wrap items-center gap-6 sm:gap-8">
