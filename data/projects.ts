@@ -15,4 +15,11 @@ export const projects: Project[] = [
     url: 'https://ember-oak-zeta.vercel.app/',
     imageUrl: '/emberandoak.png',
   },
+  {
+    id: 'varga-partners',
+    title: 'Varga & Partners',
+    description: '• Goal: Present the law firm as credible, modern, and approachable for both business and private clients.\n• Approach: An elegant website with clear practice areas, detailed team pages, useful blog content, and strong consultation and contact flows.\n• Result: A polished online presence that builds trust quickly and helps turn visitors into consultations.',
+    url: 'https://varga-partners.vercel.app/',
+    imageUrl: '/varga.png',
+  },
 ]
