@@ -15,4 +15,11 @@ export const projects: Project[] = [
     url: 'https://ember-oak-zeta.vercel.app/',
     imageUrl: '/emberandoak.png',
   },
+  {
+    id: 'clientflow',
+    title: 'ClientFlow',
+    description: '• Goal: Give freelancers and small agencies a single tool to manage clients, projects, and invoices without the chaos.\n• Approach: A clean, intuitive dashboard with drag-and-drop task boards, real-time analytics, and seamless invoicing — all designed to feel effortless.\n• Result: A polished SaaS platform that helps freelancers stay organized, get paid faster, and grow their business.',
+    url: 'https://clientflow-sooty.vercel.app/',
+    imageUrl: '/clientflow.jpg',
+  },
 ]
